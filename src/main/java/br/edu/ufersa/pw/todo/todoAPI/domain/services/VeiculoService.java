@@ -3,8 +3,12 @@ package main.java.br.edu.ufersa.pw.todo.todoAPI.domain.services;
 
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.UsuarioCreateDTO;
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.UsuarioDTO;
+import br.edu.ufersa.pw.todo.todoAPI.api.DTO.VeiculoCreateDTO;
+import br.edu.ufersa.pw.todo.todoAPI.api.DTO.VeiculoDTO;
 import br.edu.ufersa.pw.todo.todoAPI.domain.entities.Usuario;
+import br.edu.ufersa.pw.todo.todoAPI.domain.entities.Veiculo;
 import br.edu.ufersa.pw.todo.todoAPI.domain.repositories.UsuarioRepository;
+import br.edu.ufersa.pw.todo.todoAPI.domain.repositories.VeiculoRepository;
 import br.edu.ufersa.pw.todo.todoAPI.domain.services.UsuarioService;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -15,7 +19,7 @@ public class VeiculoService {
     public VeiculoService(VeiculoRepository repo){this.repo = repo;}
     public VeiculoDTO criar (VeiculoCreateDTO dto)
             throws DataIntegrityViolationException {
-        Veiculo veiculo = repo.findByEmail(dto.getEmail());
+        Veiculo veiculo = repo.findByChassi(dto.getChassi());
         if (veiculo != null) throw new DataIntegrityViolationException(
                 "Já existe um veículo cadastrado com este nome!");
         return new VeiculoDTO(repo.save(new Veiculo(dto)));
