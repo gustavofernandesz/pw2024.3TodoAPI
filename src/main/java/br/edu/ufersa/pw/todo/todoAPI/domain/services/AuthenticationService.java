@@ -1,11 +1,16 @@
 package br.edu.ufersa.pw.todo.todoAPI.domain.services;
 
+import br.edu.ufersa.pw.todo.todoAPI.domain.repositories.UsuarioRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.MalformedJwtException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -15,12 +20,14 @@ import java.util.Collections;
 import java.util.Date;
 
 @Service
-public class AuthenticationService {
+public class AuthenticationService implements UserDetailsService {
     static final long EXPIRATIONTIME = 1000*60*15;
     static final String SIGNINGKEY = "O segredo precisa ser longo para não dará pau";
     static final String PREFIX = "Bearer";
     private static final SecretKey SECRETKEY = Keys.hmacShaKeyFor(SIGNINGKEY.getBytes());  // Gerando a chave com os bytes da chave secreta
 
+
+    UsuarioRepository repository;
 
     static public void addToken(HttpServletResponse res, String email){
         System.out.println("addToken do AuthenticationService!");
@@ -57,4 +64,8 @@ public class AuthenticationService {
         return null;
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return repository.findByEmail(username);
+    }
 }
