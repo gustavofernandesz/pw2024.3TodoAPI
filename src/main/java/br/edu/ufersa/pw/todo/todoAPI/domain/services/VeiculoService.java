@@ -1,112 +1,84 @@
-package main.java.br.edu.ufersa.pw.todo.todoAPI.domain.services;
+package br.edu.ufersa.pw.todo.todoAPI.domain.services;
 
-
-import br.edu.ufersa.pw.todo.todoAPI.api.DTO.UsuarioCreateDTO;
-import br.edu.ufersa.pw.todo.todoAPI.api.DTO.UsuarioDTO;
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.VeiculoCreateDTO;
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.VeiculoDTO;
-import br.edu.ufersa.pw.todo.todoAPI.domain.entities.Usuario;
 import br.edu.ufersa.pw.todo.todoAPI.domain.entities.Veiculo;
-import br.edu.ufersa.pw.todo.todoAPI.domain.repositories.UsuarioRepository;
 import br.edu.ufersa.pw.todo.todoAPI.domain.repositories.VeiculoRepository;
-import br.edu.ufersa.pw.todo.todoAPI.domain.services.UsuarioService;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class VeiculoService {
-    private final VeiculoRepository repo;
-    public VeiculoService(VeiculoRepository repo){this.repo = repo;}
-    public VeiculoDTO criar (VeiculoCreateDTO dto)
-            throws DataIntegrityViolationException {
-        Veiculo veiculo = repo.findByChassi(dto.getChassi());
-        if (veiculo != null) throw new DataIntegrityViolationException(
-                "Já existe um veículo cadastrado com este nome!");
-        return new VeiculoDTO(repo.save(new Veiculo(dto)));
+
+    private final VeiculoRepository veiculoRepository;
+
+    public VeiculoService(VeiculoRepository veiculoRepository) {
+        this.veiculoRepository = veiculoRepository;
     }
 
+    // Método para obter todos os veículos
+    public List<VeiculoDTO> getAllVeiculos() {
+        List<Veiculo> veiculos = veiculoRepository.findAll();
+        return veiculos.stream().map(VeiculoDTO::new).toList();
+    }
 
-//    private String nome;
-//    private double preco;
-//    private String numeroChassi;
-//    private String anoModelo;
-//    private int quilometragem;
-//    private String cor;
-//    private String motor;
-//    private enum combustivel;
-//    private String cambio;
-//    private String caminhoImagem;
-//
-//
-//    public String getNome() {
-//        return nome;
-//    }
-//
-//    public void setNome(String nome) {
-//        this.nome = nome;
-//    }
-//
-//    public double getPreco() {
-//        return preco;
-//    }
-//
-//    public void setPreco(double preco) {
-//        this.preco = preco;
-//    }
-//
-//    public String getNumeroChassi() {
-//        return numeroChassi;
-//    }
-//
-//    public void setNumeroChassi(String numeroChassi) {
-//        this.numeroChassi = numeroChassi;
-//    }
-//
-//    public String getAnoModelo() {
-//        return anoModelo;
-//    }
-//
-//    public void setAnoModelo(String anoModelo) {
-//        this.anoModelo = anoModelo;
-//    }
-//
-//    public int getQuilometragem() {
-//        return quilometragem;
-//    }
-//
-//    public void setQuilometragem(int quilometragem) {
-//        this.quilometragem = quilometragem;
-//    }
-//
-//    public String getCor() {
-//        return cor;
-//    }
-//
-//    public void setCor(String cor) {
-//        this.cor = cor;
-//    }
-//
-//    public String getMotor() {
-//        return motor;
-//    }
-//
-//    public void setMotor(String motor) {
-//        this.motor = motor;
-//    }
-//
-//    public String getCambio() {
-//        return cambio;
-//    }
-//
-//    public void setCambio(String cambio) {
-//        this.cambio = cambio;
-//    }
-//
-//    public String getCaminhoImagem() {
-//        return caminhoImagem;
-//    }
-//
-//    public void setCaminhoImagem(String caminhoImagem) {
-//        this.caminhoImagem = caminhoImagem;
-//    }
+    // Método para obter um veículo por ID
+    public VeiculoDTO getVeiculoById(Long id) {
+        Optional<Veiculo> veiculo = veiculoRepository.findById(id);
+        return veiculo.map(VeiculoDTO::new).orElse(null);
+    }
+
+    // Método para adicionar um novo veículo
+    public VeiculoDTO addVeiculo(VeiculoCreateDTO dto) throws DataIntegrityViolationException {
+        Veiculo veiculoExistente = (Veiculo) veiculoRepository.findByChassi(dto.getChassi());
+        if (veiculoExistente != null) {
+            throw new DataIntegrityViolationException("Já existe um veículo cadastrado com este chassi!");
+        }
+
+        Veiculo novoVeiculo = new Veiculo();
+        novoVeiculo.setMarca(dto.getMarca());
+        novoVeiculo.setModelo(dto.getModelo());
+        novoVeiculo.setAno(dto.getAno());
+        novoVeiculo.setCor(dto.getCor());
+        novoVeiculo.setPreco(dto.getPreco());
+        novoVeiculo.setDescricao(dto.getDescricao());
+        novoVeiculo.setChassi(dto.getChassi()); // Certifique-se de que o campo 'chassi' foi adicionado corretamente
+        novoVeiculo.setStatus(dto.getStatus());
+
+        Veiculo veiculoSalvo = veiculoRepository.save(novoVeiculo);
+        return new VeiculoDTO(veiculoSalvo);
+    }
+
+    // Método para atualizar um veículo existente
+    public VeiculoDTO updateVeiculo(Long id, VeiculoCreateDTO dto) {
+        Optional<Veiculo> veiculoExistente = veiculoRepository.findById(id);
+        if (veiculoExistente.isEmpty()) {
+            return null; // Retorna null caso o veículo não seja encontrado
+        }
+
+        Veiculo veiculo = veiculoExistente.get();
+        veiculo.setMarca(dto.getMarca());
+        veiculo.setModelo(dto.getModelo());
+        veiculo.setAno(dto.getAno());
+        veiculo.setCor(dto.getCor());
+        veiculo.setPreco(dto.getPreco());
+        veiculo.setDescricao(dto.getDescricao());
+        veiculo.setChassi(dto.getChassi()); // Atualizando o chassi
+        veiculo.setStatus(dto.getStatus());
+
+        Veiculo veiculoAtualizado = veiculoRepository.save(veiculo);
+        return new VeiculoDTO(veiculoAtualizado);
+    }
+
+    // Método para excluir um veículo
+    public boolean deleteVeiculo(Long id) {
+        if (veiculoRepository.existsById(id)) {
+            veiculoRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }
