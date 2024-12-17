@@ -1,29 +1,32 @@
-package main.java.br.edu.ufersa.pw.todo.todoAPI.domain.services;
+package br.edu.ufersa.pw.todo.todoAPI.domain.services;
 
 
-import br.edu.ufersa.pw.todo.todoAPI.api.DTO.UsuarioCreateDTO;
-import br.edu.ufersa.pw.todo.todoAPI.api.DTO.UsuarioDTO;
-import br.edu.ufersa.pw.todo.todoAPI.api.DTO.VeiculoCreateDTO;
-import br.edu.ufersa.pw.todo.todoAPI.api.DTO.VeiculoDTO;
-import br.edu.ufersa.pw.todo.todoAPI.domain.entities.Usuario;
-import br.edu.ufersa.pw.todo.todoAPI.domain.entities.Veiculo;
-import br.edu.ufersa.pw.todo.todoAPI.domain.repositories.UsuarioRepository;
+import br.edu.ufersa.pw.todo.todoAPI.api.DTO.*;
 import br.edu.ufersa.pw.todo.todoAPI.domain.repositories.VeiculoRepository;
-import br.edu.ufersa.pw.todo.todoAPI.domain.services.UsuarioService;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class VeiculoService {
     private final VeiculoRepository repo;
-    public VeiculoService(VeiculoRepository repo){this.repo = repo;}
-    public VeiculoDTO criar (VeiculoCreateDTO dto)
-            throws DataIntegrityViolationException {
-        Veiculo veiculo = repo.findByChassi(dto.getChassi());
-        if (veiculo != null) throw new DataIntegrityViolationException(
-                "Já existe um veículo cadastrado com este nome!");
-        return new VeiculoDTO(repo.save(new Veiculo(dto)));
+
+
+    public VeiculoService(final VeiculoRepository repo){this.repo = repo;}
+
+    public List<VeiculoDTO> buscarTodos(){
+        List<VeiculoDTO> result = repo.findAll()
+                .stream().map(veiculo -> new VeiculoDTO(veiculo))
+                .collect(Collectors.toList());
+        return result;
     }
+    public VeiculoDTO criar (VeiculoCreateDTO veiculo){
+        return new VeiculoDTO();
+    }
+}
+
+
 
 
 //    private String nome;
@@ -109,4 +112,4 @@ public class VeiculoService {
 //    public void setCaminhoImagem(String caminhoImagem) {
 //        this.caminhoImagem = caminhoImagem;
 //    }
-}
+

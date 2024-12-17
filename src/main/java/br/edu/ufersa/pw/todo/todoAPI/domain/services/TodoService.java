@@ -17,6 +17,7 @@ public class TodoService {
     public TodoService(final TodoRepository repository){
         this.repository = repository;
     }
+
     public List<TodoDTO> buscarTodos(){
         List<TodoDTO> result = repository.findAll()
                 .stream().map(todo -> new TodoDTO(todo))
