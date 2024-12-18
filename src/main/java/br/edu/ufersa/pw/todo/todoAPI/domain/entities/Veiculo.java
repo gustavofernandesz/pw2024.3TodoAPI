@@ -12,6 +12,8 @@ import jakarta.validation.constraints.PositiveOrZero;
 
 import java.util.Objects;
 
+import java.util.Objects;
+
 @Entity
 @Table(name="tb_veiculos")
 public class Veiculo {
@@ -44,9 +46,14 @@ public class Veiculo {
     private boolean vendido;
 
     private String caminhoImagem;
+    @OneToOne (mappedBy="veiculo")
+    private Venda venda;
 
 
     public Veiculo() {}
+    public Veiculo(long chassi){
+        this.chassi = chassi;
+    }
 
     public Veiculo(long chassi) {
         this.chassi = chassi;
@@ -114,6 +121,18 @@ public class Veiculo {
                 Objects.equals(combustivel, veiculo.combustivel) &&
                 Objects.equals(cambio, veiculo.cambio) &&
                 Objects.equals(caminhoImagem, veiculo.caminhoImagem);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, preco, chassi, anoModelo, quilometragem, cor, motor, combustivel, cambio, caminhoImagem);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Veiculo veiculo = (Veiculo) o;
+        return Double.compare(preco, veiculo.preco) == 0 && chassi == veiculo.chassi && quilometragem == veiculo.quilometragem && Objects.equals(nome, veiculo.nome) && Objects.equals(anoModelo, veiculo.anoModelo) && Objects.equals(cor, veiculo.cor) && Objects.equals(motor, veiculo.motor) && combustivel == veiculo.combustivel && Objects.equals(cambio, veiculo.cambio) && Objects.equals(caminhoImagem, veiculo.caminhoImagem);
     }
 
     @Override

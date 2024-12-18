@@ -55,7 +55,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers(HttpMethod.POST, "/api/v1/login", "/api/v1/usuarios").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/api/v1/login", "/api/v1/usuarios", "/api/v1/veiculos").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/h2-console/**").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/h2-console/**").permitAll()
                                 .anyRequest().authenticated()

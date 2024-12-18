@@ -2,6 +2,7 @@ package br.edu.ufersa.pw.todo.todoAPI.domain.services;
 
 
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.*;
+import br.edu.ufersa.pw.todo.todoAPI.domain.entities.Usuario;
 import br.edu.ufersa.pw.todo.todoAPI.domain.repositories.VeiculoRepository;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,8 @@ public class VeiculoService {
                 .collect(Collectors.toList());
         return result;
     }
+
+
     public VeiculoDTO criar (VeiculoCreateDTO veiculo){
         return new VeiculoDTO();
     }
