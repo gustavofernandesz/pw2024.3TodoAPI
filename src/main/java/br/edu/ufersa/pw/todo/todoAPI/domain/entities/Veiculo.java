@@ -4,6 +4,8 @@ import br.edu.ufersa.pw.todo.todoAPI.api.DTO.Combustivel;
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.VeiculoCreateDTO;
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name="tb_veiculos")
 public class Veiculo {
@@ -22,6 +24,9 @@ public class Veiculo {
     private String caminhoImagem;
 
     public Veiculo() {}
+    public Veiculo(long chassi){
+        this.chassi = chassi;
+    }
 
     public Veiculo(VeiculoCreateDTO veiculo) {
         setAnoModelo(veiculo.getAnoModelo());
@@ -114,6 +119,18 @@ public class Veiculo {
 
     public void setCaminhoImagem(String caminhoImagem) {
         this.caminhoImagem = caminhoImagem;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Veiculo veiculo = (Veiculo) o;
+        return Double.compare(preco, veiculo.preco) == 0 && chassi == veiculo.chassi && quilometragem == veiculo.quilometragem && Objects.equals(nome, veiculo.nome) && Objects.equals(anoModelo, veiculo.anoModelo) && Objects.equals(cor, veiculo.cor) && Objects.equals(motor, veiculo.motor) && combustivel == veiculo.combustivel && Objects.equals(cambio, veiculo.cambio) && Objects.equals(caminhoImagem, veiculo.caminhoImagem);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, preco, chassi, anoModelo, quilometragem, cor, motor, combustivel, cambio, caminhoImagem);
     }
 
     //classe veículo
