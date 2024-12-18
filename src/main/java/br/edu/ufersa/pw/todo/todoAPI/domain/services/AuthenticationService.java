@@ -20,7 +20,7 @@ import java.util.Collections;
 import java.util.Date;
 
 @Service
-public class AuthenticationService implements UserDetailsService {
+public class AuthenticationService  {
     static final long EXPIRATIONTIME = 1000*60*15;
     static final String SIGNINGKEY = "O segredo precisa ser longo para não dará pau";
     static final String PREFIX = "Bearer";
@@ -64,8 +64,8 @@ public class AuthenticationService implements UserDetailsService {
         return null;
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return repository.findByEmail(username);
-    }
+//    @Override
+//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//        return repository.findByEmail(username);
+//    }
 }

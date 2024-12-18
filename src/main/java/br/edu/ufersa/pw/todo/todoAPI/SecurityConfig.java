@@ -70,8 +70,6 @@ public class SecurityConfig {
                 .headers(headers ->
                         headers.frameOptions(Customizer.withDefaults()).disable() // Desabilita a proteção contra frame options
                 );
-        return http.csrf(csrf -> csrf.disable())
-                .build()
-                ;
+        return http.build();
     }
 }

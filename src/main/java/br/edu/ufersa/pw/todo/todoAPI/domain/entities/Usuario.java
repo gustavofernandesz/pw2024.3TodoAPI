@@ -14,7 +14,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name="tb_usuarios")
-public class Usuario implements UserDetails {
+public class Usuario{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     Long id;
@@ -79,39 +79,39 @@ public class Usuario implements UserDetails {
         return Objects.hashCode(id);
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        if(this.funcao == FuncaoUser.GERENTE) return List.of( new SimpleGrantedAuthority("ROLE_USUARIO"), new SimpleGrantedAuthority("ROLE_ADMIN") );
-        else return List.of( new SimpleGrantedAuthority("ROLE_USUARIO") );
-    }
-
-    @Override
-    public String getPassword() {
-        return senha;
-    }
-
-    @Override
-    public String getUsername() {
-        return email;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
+//    @Override
+//    public Collection<? extends GrantedAuthority> getAuthorities() {
+//        if(this.funcao == FuncaoUser.GERENTE) return List.of( new SimpleGrantedAuthority("ROLE_USUARIO"), new SimpleGrantedAuthority("ROLE_ADMIN") );
+//        else return List.of( new SimpleGrantedAuthority("ROLE_USUARIO") );
+//    }
+//
+//    @Override
+//    public String getPassword() {
+//        return senha;
+//    }
+//
+//    @Override
+//    public String getUsername() {
+//        return email;
+//    }
+//
+//    @Override
+//    public boolean isAccountNonExpired() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isAccountNonLocked() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isCredentialsNonExpired() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isEnabled() {
+//        return true;
+//    }
 }

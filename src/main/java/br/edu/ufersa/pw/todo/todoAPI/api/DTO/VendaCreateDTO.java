@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class VendaCreateDTO {
     long idUsu;
     String item;
-    LocalDate prazo;
+    LocalDate dataVenda;
     Estado estado;
 
     public long getIdUsu() {
@@ -24,12 +24,12 @@ public class VendaCreateDTO {
         this.item = item;
     }
 
-    public LocalDate getPrazo() {
-        return prazo;
+    public LocalDate getDataVenda() {
+        return dataVenda;
     }
 
-    public void setPrazo(LocalDate prazo) {
-        this.prazo = prazo;
+    public void setDataVenda(LocalDate dataVenda) {
+        this.dataVenda = dataVenda;
     }
 
     public Estado getEstado() {

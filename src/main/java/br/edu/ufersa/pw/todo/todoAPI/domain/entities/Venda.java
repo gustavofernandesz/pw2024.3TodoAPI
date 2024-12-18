@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table(name="tb_todos")
+@Table(name="tb_vendas")
 public class Venda {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class Venda {
     @JoinColumn(name="chassi_veiculo")
     Veiculo veiculo;
     String item;
-    LocalDate prazo;
+    LocalDate dataVenda;
     Estado estado;
     LocalDate conclusao;
     public Venda(){}
@@ -27,7 +27,7 @@ public class Venda {
         setUsuario(new Usuario(todo.getIdUsu()));
         setEstado(todo.getEstado());
         setItem(todo.getItem());
-        setPrazo(todo.getPrazo());
+        setdataVenda(todo.getDataVenda());
     }
     public long getId() {
         return id;
@@ -53,12 +53,12 @@ public class Venda {
         this.item = item;
     }
 
-    public LocalDate getPrazo() {
-        return prazo;
+    public LocalDate getdataVenda() {
+        return dataVenda;
     }
 
-    public void setPrazo(LocalDate prazo) {
-        this.prazo = prazo;
+    public void setdataVenda(LocalDate prazo) {
+        this.dataVenda = prazo;
     }
 
     public Estado getEstado() {

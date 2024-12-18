@@ -14,7 +14,7 @@ public class VendaDTO {
    public VendaDTO(Venda venda){
        setId(venda.getId());
        setEstado(venda.getEstado());
-       setPrazo(venda.getPrazo());
+       setdataVenda(venda.getdataVenda());
        setItem(venda.getItem());
    }
 
@@ -38,7 +38,7 @@ public class VendaDTO {
         return prazo;
     }
 
-    public void setPrazo(LocalDate prazo) {
+    public void setdataVenda(LocalDate prazo) {
         this.prazo = prazo;
     }
 
