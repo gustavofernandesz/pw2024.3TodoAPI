@@ -1,25 +1,49 @@
 package br.edu.ufersa.pw.todo.todoAPI.domain.entities;
 
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.Combustivel;
+import br.edu.ufersa.pw.todo.todoAPI.api.DTO.Transmissao;
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.VeiculoCreateDTO;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
 @Table(name="tb_veiculos")
 public class Veiculo {
 
+
+    @NotNull
     private String nome;
-    private double preco;
+
+    @PositiveOrZero
+    @NotNull
+    private Double preco;
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long chassi;
+    @Column(unique = true)
+    private String numeroChassi;
+
     private String anoModelo;
-    private int quilometragem;
+
+    @PositiveOrZero
+    private Integer quilometragem;
+
     private String cor;
+
     private String motor;
+
     private Combustivel combustivel;
-    private String cambio;
+
+    private Transmissao cambio;
+
+    private boolean vendido;
+
     private String caminhoImagem;
+
 
     public Veiculo() {}
 
@@ -36,85 +60,40 @@ public class Veiculo {
 
     }
 
-    public String getNome() {
-        return nome;
-    }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public String getNome() { return nome; }
+    public void setNome(String nomeVeiculo) { this.nome = nomeVeiculo; }
 
-    public double getPreco() {
-        return preco;
-    }
+    public Double getPreco() { return preco; }
+    public void setPreco(Double valor) { this.preco = valor; }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
+    public String getNumeroChassi() { return numeroChassi; }
+    public void setNumeroChassi(String numeroChassi) { this.numeroChassi = numeroChassi; }
 
-    public long getChassi() {
-        return chassi;
-    }
+    public String getAnoModelo() { return anoModelo; }
+    public void setAnoModelo(String anoModelo) { this.anoModelo = anoModelo; }
 
-    public void setChassi(long chassi) {
-        this.chassi = chassi;
-    }
+    public Integer getQuilometragem() { return quilometragem; }
+    public void setQuilometragem(Integer quilometragem) { this.quilometragem = quilometragem; }
 
-    public String getAnoModelo() {
-        return anoModelo;
-    }
+    public String getCor() { return cor; }
+    public void setCor(String cor) { this.cor = cor; }
 
-    public void setAnoModelo(String anoModelo) {
-        this.anoModelo = anoModelo;
-    }
+    public String getMotor() { return motor; }
+    public void setMotor(String motor) { this.motor = motor; }
 
-    public int getQuilometragem() {
-        return quilometragem;
-    }
+    public Combustivel getCombustivel() { return combustivel; }
+    public void setCombustivel(Combustivel combustivel) { this.combustivel = combustivel; }
 
-    public void setQuilometragem(int quilometragem) {
-        this.quilometragem = quilometragem;
-    }
+    public Transmissao getCambio() { return cambio; }
+    public void setCambio(Transmissao cambio) { this.cambio = cambio; }
 
-    public String getCor() {
-        return cor;
-    }
+    public boolean isVendido() { return vendido; }
+    public void setVendido(boolean vendido) { this.vendido = vendido; }
 
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
+    public String getCaminhoImagem() { return caminhoImagem; }
+    public void setCaminhoImagem(String caminhoImagem) { this.caminhoImagem = caminhoImagem; }
 
-    public String getMotor() {
-        return motor;
-    }
-
-    public void setMotor(String motor) {
-        this.motor = motor;
-    }
-
-    public Combustivel getCombustivel() {
-        return combustivel;
-    }
-
-    public void setCombustivel(Combustivel combustivel) {
-        this.combustivel = combustivel;
-    }
-
-    public String getCambio() {
-        return cambio;
-    }
-
-    public void setCambio(String cambio) {
-        this.cambio = cambio;
-    }
-
-    public String getCaminhoImagem() {
-        return caminhoImagem;
-    }
-
-    public void setCaminhoImagem(String caminhoImagem) {
-        this.caminhoImagem = caminhoImagem;
-    }
 
     //classe veículo
 }
