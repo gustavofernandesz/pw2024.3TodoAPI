@@ -15,6 +15,9 @@ public class Venda {
     @ManyToOne
     @JoinColumn(name="id_usuario")
     Usuario usuario;
+    @OneToOne
+    @JoinColumn(name="chassi_veiculo")
+    Veiculo veiculo;
     String item;
     LocalDate prazo;
     Estado estado;

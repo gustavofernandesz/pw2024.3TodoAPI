@@ -22,6 +22,8 @@ public class Veiculo {
     private Combustivel combustivel;
     private String cambio;
     private String caminhoImagem;
+    @OneToOne (mappedBy="veiculo")
+    private Venda venda;
 
     public Veiculo() {}
     public Veiculo(long chassi){
