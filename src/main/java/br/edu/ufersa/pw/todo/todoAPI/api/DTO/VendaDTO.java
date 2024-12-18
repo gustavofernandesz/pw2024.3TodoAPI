@@ -1,19 +1,29 @@
 package br.edu.ufersa.pw.todo.todoAPI.api.DTO;
 
+import br.edu.ufersa.pw.todo.todoAPI.domain.entities.Venda;
+
 import java.time.LocalDate;
 
-public class TodoCreateDTO {
-    long idUsu;
-    String item;
-    LocalDate prazo;
-    Estado estado;
 
-    public long getIdUsu() {
-        return idUsu;
+public class VendaDTO {
+   long id;
+   String item;
+   LocalDate prazo;
+   Estado estado;
+   public VendaDTO(){}
+   public VendaDTO(Venda venda){
+       setId(venda.getId());
+       setEstado(venda.getEstado());
+       setPrazo(venda.getPrazo());
+       setItem(venda.getItem());
+   }
+
+    public long getId() {
+        return id;
     }
 
-    public void setIdUsu(long usu) {
-        this.idUsu = usu;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getItem() {

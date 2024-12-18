@@ -26,7 +26,7 @@ public class Usuario implements UserDetails {
     @NotNull
     FuncaoUser funcao;
     @OneToMany(mappedBy="usuario")
-    private List<Todo> todoList;
+    private List<Venda> vendaList;
 
     public Usuario(UsuarioCreateDTO dto) {
         this.email = dto.getEmail();
@@ -59,12 +59,12 @@ public class Usuario implements UserDetails {
         this.senha = senha;
     }
 
-    public List<Todo> getTodoList() {
-        return todoList;
+    public List<Venda> getTodoList() {
+        return vendaList;
     }
 
-    public void setTodoList(List<Todo> todoList) {
-        this.todoList = todoList;
+    public void setTodoList(List<Venda> vendaList) {
+        this.vendaList = vendaList;
     }
 
     @Override

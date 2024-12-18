@@ -1,14 +1,14 @@
 package br.edu.ufersa.pw.todo.todoAPI.domain.entities;
 
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.Estado;
-import br.edu.ufersa.pw.todo.todoAPI.api.DTO.TodoCreateDTO;
+import br.edu.ufersa.pw.todo.todoAPI.api.DTO.VendaCreateDTO;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
 @Table(name="tb_todos")
-public class Todo {
+public class Venda {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     Long id;
@@ -19,8 +19,8 @@ public class Todo {
     LocalDate prazo;
     Estado estado;
     LocalDate conclusao;
-    public Todo(){}
-    public Todo(TodoCreateDTO todo){
+    public Venda(){}
+    public Venda(VendaCreateDTO todo){
         setUsuario(new Usuario(todo.getIdUsu()));
         setEstado(todo.getEstado());
         setItem(todo.getItem());
@@ -77,8 +77,8 @@ public class Todo {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Todo todo = (Todo) o;
-        return Objects.equals(id, todo.id) && Objects.equals(usuario, todo.usuario) && Objects.equals(item, todo.item);
+        Venda venda = (Venda) o;
+        return Objects.equals(id, venda.id) && Objects.equals(usuario, venda.usuario) && Objects.equals(item, venda.item);
     }
 
     @Override
