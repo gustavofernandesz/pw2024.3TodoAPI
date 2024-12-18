@@ -13,27 +13,28 @@ public class VeiculoDTO {
     private String cor;
     private String motor;
     private Combustivel combustivel;
-    private String cambio;
+    private Transmissao cambio;
     private String caminhoImagem;
 
-    public VeiculoDTO(Veiculo veiculo) {
-        this.nome = nome;
-        this.preco = preco;
-        this.chassi = chassi;
-        this.anoModelo = anoModelo;
-        this.quilometragem = quilometragem;
-        this.cor = cor;
-        this.motor = motor;
-        this.cambio = cambio;
-        this.caminhoImagem = caminhoImagem;
-    }
 
     public VeiculoDTO() {}
+
+    public VeiculoDTO(Veiculo veiculo) {
+        this.nome = veiculo.getNome();
+        this.preco = veiculo.getPreco();
+        this.chassi = veiculo.getChassi();
+        this.anoModelo = veiculo.getAnoModelo();
+        this.quilometragem = veiculo.getQuilometragem();
+        this.cor = veiculo.getCor();
+        this.motor = veiculo.getMotor();
+        this.cambio = veiculo.getCambio();
+        this.caminhoImagem = veiculo.getCaminhoImagem();
+    }
+
 
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -41,7 +42,6 @@ public class VeiculoDTO {
     public double getPreco() {
         return preco;
     }
-
     public void setPreco(double preco) {
         this.preco = preco;
     }
@@ -49,7 +49,6 @@ public class VeiculoDTO {
     public long getNumeroChassi() {
         return chassi;
     }
-
     public void setNumeroChassi(long Chassi) {
         this.chassi = chassi;
     }
@@ -57,7 +56,6 @@ public class VeiculoDTO {
     public String getAnoModelo() {
         return anoModelo;
     }
-
     public void setAnoModelo(String anoModelo) {
         this.anoModelo = anoModelo;
     }
@@ -65,7 +63,6 @@ public class VeiculoDTO {
     public int getQuilometragem() {
         return quilometragem;
     }
-
     public void setQuilometragem(int quilometragem) {
         this.quilometragem = quilometragem;
     }
@@ -73,7 +70,6 @@ public class VeiculoDTO {
     public String getCor() {
         return cor;
     }
-
     public void setCor(String cor) {
         this.cor = cor;
     }
@@ -81,32 +77,28 @@ public class VeiculoDTO {
     public String getMotor() {
         return motor;
     }
-
     public void setMotor(String motor) {
         this.motor = motor;
     }
 
-    public String getCambio() {
+    public Transmissao getCambio() {
         return cambio;
     }
-
-    public void setCambio(String cambio) {
+    public void setCambio(Transmissao cambio) {
         this.cambio = cambio;
-    }
-
-    public String getCaminhoImagem() {
-        return caminhoImagem;
-    }
-
-    public void setCaminhoImagem(String caminhoImagem) {
-        this.caminhoImagem = caminhoImagem;
     }
 
     public Combustivel getCombustivel() {
         return combustivel;
     }
-
     public void setCombustivel(Combustivel combustivel) {
         this.combustivel = combustivel;
+    }
+
+    public String getCaminhoImagem() {
+        return caminhoImagem;
+    }
+    public void setCaminhoImagem(String caminhoImagem) {
+        this.caminhoImagem = caminhoImagem;
     }
 }
