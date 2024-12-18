@@ -7,7 +7,7 @@ public class VeiculoDTO {
 
     private String nome;
     private double preco;
-    private String chassi;
+    private long chassi;
     private String anoModelo;
     private int quilometragem;
     private String cor;
@@ -22,7 +22,7 @@ public class VeiculoDTO {
     public VeiculoDTO(Veiculo veiculo) {
         this.nome = veiculo.getNome();
         this.preco = veiculo.getPreco();
-        this.chassi = veiculo.getNumeroChassi();
+        this.chassi = veiculo.getChassi();
         this.anoModelo = veiculo.getAnoModelo();
         this.quilometragem = veiculo.getQuilometragem();
         this.cor = veiculo.getCor();
@@ -46,7 +46,7 @@ public class VeiculoDTO {
         this.preco = preco;
     }
 
-    public String getNumeroChassi() {
+    public long getNumeroChassi() {
         return chassi;
     }
     public void setNumeroChassi(long Chassi) {

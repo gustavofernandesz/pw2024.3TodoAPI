@@ -7,9 +7,10 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
+
+import java.util.Objects;
 
 @Entity
 @Table(name="tb_veiculos")
@@ -25,7 +26,7 @@ public class Veiculo {
 
     @Id
     @Column(unique = true)
-    private String numeroChassi;
+    private long chassi;
 
     private String anoModelo;
 
@@ -47,6 +48,10 @@ public class Veiculo {
 
     public Veiculo() {}
 
+    public Veiculo(long chassi) {
+        this.chassi = chassi;
+    }
+
     public Veiculo(VeiculoCreateDTO veiculo) {
         setAnoModelo(veiculo.getAnoModelo());
         setNome(veiculo.getNome());
@@ -67,8 +72,8 @@ public class Veiculo {
     public Double getPreco() { return preco; }
     public void setPreco(Double valor) { this.preco = valor; }
 
-    public String getNumeroChassi() { return numeroChassi; }
-    public void setNumeroChassi(String numeroChassi) { this.numeroChassi = numeroChassi; }
+    public long getChassi() { return chassi; }
+    public void setChassi(long numeroChassi) { this.chassi = numeroChassi; }
 
     public String getAnoModelo() { return anoModelo; }
     public void setAnoModelo(String anoModelo) { this.anoModelo = anoModelo; }
@@ -94,6 +99,27 @@ public class Veiculo {
     public String getCaminhoImagem() { return caminhoImagem; }
     public void setCaminhoImagem(String caminhoImagem) { this.caminhoImagem = caminhoImagem; }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Veiculo veiculo = (Veiculo) o;
+        return Double.compare(preco, veiculo.preco) == 0 &&
+                Objects.equals(chassi, veiculo.chassi) &&
+                Objects.equals(quilometragem, veiculo.quilometragem) &&
+                Objects.equals(nome, veiculo.nome) &&
+                Objects.equals(anoModelo, veiculo.anoModelo) &&
+                Objects.equals(cor, veiculo.cor) &&
+                Objects.equals(motor, veiculo.motor) &&
+                Objects.equals(combustivel, veiculo.combustivel) &&
+                Objects.equals(cambio, veiculo.cambio) &&
+                Objects.equals(caminhoImagem, veiculo.caminhoImagem);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, preco, chassi, anoModelo, quilometragem, cor, motor, combustivel, cambio, caminhoImagem);
+    }
 
     //classe veículo
 }

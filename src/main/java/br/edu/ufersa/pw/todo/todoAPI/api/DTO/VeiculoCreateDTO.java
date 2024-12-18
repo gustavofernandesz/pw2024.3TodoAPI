@@ -9,7 +9,7 @@ public class VeiculoCreateDTO {
     @NotBlank(message = "Preço do veículo é mandatório")
     private double preco;
     @NotBlank(message = "Número do chassi é mandatório")
-    private String chassi;
+    private long chassi;
     private String anoModelo;
     private int quilometragem;
     private String cor;
@@ -24,7 +24,7 @@ public class VeiculoCreateDTO {
     public VeiculoCreateDTO(Veiculo veiculo) {
         this.nome = veiculo.getNome();
         this.preco = veiculo.getPreco();
-        this.chassi = veiculo.getNumeroChassi();
+        this.chassi = veiculo.getChassi();
         this.anoModelo = veiculo.getAnoModelo();
         this.quilometragem = veiculo.getQuilometragem();
         this.cor = veiculo.getCor();
@@ -47,10 +47,10 @@ public class VeiculoCreateDTO {
         this.preco = preco;
     }
 
-    public String getChassi() {
+    public long getChassi() {
         return chassi;
     }
-    public void setChassi(String chassi) {
+    public void setChassi(long chassi) {
         this.chassi = chassi;
     }
 
