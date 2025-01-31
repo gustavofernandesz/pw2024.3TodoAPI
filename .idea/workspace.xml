@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c4d2fd0f-2b13-4d10-b1c9-5d36bd4d0c89" name="Changes" comment="atualização DOCKER">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ufersa/pw/todo/todoAPI/domain/entities/Veiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ufersa/pw/todo/todoAPI/domain/entities/Veiculo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod2.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-prod2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-prod2.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/Combustivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/Combustivel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/VeiculoCreateDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/VeiculoCreateDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/VeiculoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/VeiculoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/domain/entities/Veiculo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/domain/entities/Veiculo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,16 +30,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "assignee": "gustavofernandesz"
+      &quot;assignee&quot;: &quot;gustavofernandesz&quot;
     }
   ],
-  "lastFilter": {
-    "assignee": "gustavofernandesz"
+  &quot;lastFilter&quot;: {
+    &quot;assignee&quot;: &quot;gustavofernandesz&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/gustavofernandesz/pw2024.3TodoAPI.git&quot;,
@@ -122,7 +123,8 @@
       <workItem from="1734480661637" duration="6134000" />
       <workItem from="1734535224778" duration="15145000" />
       <workItem from="1734566613499" duration="89000" />
-      <workItem from="1738296514526" duration="4847000" />
+      <workItem from="1738296514526" duration="5040000" />
+      <workItem from="1738303916309" duration="353000" />
     </task>
     <task id="LOCAL-00001" summary="veículo service e combustível enum">
       <option name="closed" value="true" />
@@ -268,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738303015148</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="atualização DOCKER">
+      <option name="closed" value="true" />
+      <created>1738303793887</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1738303793888</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
