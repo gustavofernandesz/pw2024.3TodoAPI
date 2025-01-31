@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d2fd0f-2b13-4d10-b1c9-5d36bd4d0c89" name="Changes" comment="atualização DOCKER">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +72,7 @@
       <recent name="C:\Users\gusta\Desktop\Pw\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gusta\Desktop\pw2024.3TodoAPI\src" />
       <recent name="C:\Users\gusta\Desktop\pw2024.3TodoAPI" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -112,7 +114,7 @@
       <workItem from="1734480661637" duration="6134000" />
       <workItem from="1734535224778" duration="15145000" />
       <workItem from="1734566613499" duration="89000" />
-      <workItem from="1738296514526" duration="1994000" />
+      <workItem from="1738296514526" duration="3372000" />
     </task>
     <task id="LOCAL-00001" summary="veículo service e combustível enum">
       <option name="closed" value="true" />
@@ -226,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738299533770</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="atualização DOCKER">
+      <option name="closed" value="true" />
+      <created>1738300048921</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1738300048921</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
