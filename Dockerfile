@@ -3,7 +3,7 @@ FROM maven:3.8.6-openjdk-17 AS build
 WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:go-offline  # Baixa dependências sem compilar
-COPY . .
+COPY src .
 RUN mvn clean package -DskipTests
 
 # Fase de execução
