@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4d2fd0f-2b13-4d10-b1c9-5d36bd4d0c89" name="Changes" comment="atualização">
+    <list default="true" id="c4d2fd0f-2b13-4d10-b1c9-5d36bd4d0c89" name="Changes" comment="atualização BD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod2.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +110,7 @@
       <workItem from="1734480661637" duration="6134000" />
       <workItem from="1734535224778" duration="15145000" />
       <workItem from="1734566613499" duration="89000" />
-      <workItem from="1738296514526" duration="952000" />
+      <workItem from="1738296514526" duration="1226000" />
     </task>
     <task id="LOCAL-00001" summary="veículo service e combustível enum">
       <option name="closed" value="true" />
@@ -193,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738296548081</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="atualização BD">
+      <option name="closed" value="true" />
+      <created>1738299006589</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1738299006589</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +214,7 @@
     <MESSAGE value="atualização nas classes de repository e service de veículo" />
     <MESSAGE value="atualização DTOs, VendaController e outras atualizações" />
     <MESSAGE value="atualização" />
-    <option name="LAST_COMMIT_MESSAGE" value="atualização" />
+    <MESSAGE value="atualização BD" />
+    <option name="LAST_COMMIT_MESSAGE" value="atualização BD" />
   </component>
 </project>
