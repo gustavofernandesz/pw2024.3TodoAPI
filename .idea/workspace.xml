@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c4d2fd0f-2b13-4d10-b1c9-5d36bd4d0c89" name="Changes" comment="atualização DOCKER">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod2.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/Combustivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/Combustivel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/VeiculoCreateDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/VeiculoCreateDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/VeiculoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/api/DTO/VeiculoDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/domain/entities/Veiculo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ufersa/pw/todo/todoAPI/domain/entities/Veiculo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +118,7 @@
       <workItem from="1734535224778" duration="15145000" />
       <workItem from="1734566613499" duration="89000" />
       <workItem from="1738296514526" duration="5040000" />
-      <workItem from="1738303916309" duration="353000" />
+      <workItem from="1738303916309" duration="1546000" />
     </task>
     <task id="LOCAL-00001" summary="veículo service e combustível enum">
       <option name="closed" value="true" />
@@ -278,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738303793888</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="atualização DOCKER">
+      <option name="closed" value="true" />
+      <created>1738304424878</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1738304424878</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
