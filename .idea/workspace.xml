@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d2fd0f-2b13-4d10-b1c9-5d36bd4d0c89" name="Changes" comment="atualização DOCKER">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod2.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-prod2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-prod2.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-br.edu.ufersa.pw.todo.todoAPI.TodoApiApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-br.edu.ufersa.pw.todo.todoAPI.TodoApiApplicationTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/br.edu.ufersa.pw.todo.todoAPI.TodoApiApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/br.edu.ufersa.pw.todo.todoAPI.TodoApiApplicationTests.txt" afterDir="false" />
     </list>
@@ -123,7 +122,7 @@
       <workItem from="1734566613499" duration="89000" />
       <workItem from="1738296514526" duration="5040000" />
       <workItem from="1738303916309" duration="1546000" />
-      <workItem from="1738305492795" duration="6622000" />
+      <workItem from="1738305492795" duration="8303000" />
     </task>
     <task id="LOCAL-00001" summary="veículo service e combustível enum">
       <option name="closed" value="true" />
@@ -325,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738328013883</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="atualização DOCKER">
+      <option name="closed" value="true" />
+      <created>1738329949040</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1738329949040</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
