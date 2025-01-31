@@ -3,10 +3,7 @@ package br.edu.ufersa.pw.todo.todoAPI.domain.entities;
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.Combustivel;
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.Transmissao;
 import br.edu.ufersa.pw.todo.todoAPI.api.DTO.VeiculoCreateDTO;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 
@@ -46,7 +43,7 @@ public class Veiculo {
     private boolean vendido;
 
     private String caminhoImagem;
-    @OneToOne (mappedBy="veiculo")
+    @OneToOne(mappedBy="veiculo")
     private Venda venda;
 
 
@@ -55,9 +52,6 @@ public class Veiculo {
         this.chassi = chassi;
     }
 
-    public Veiculo(long chassi) {
-        this.chassi = chassi;
-    }
 
     public Veiculo(VeiculoCreateDTO veiculo) {
         setAnoModelo(veiculo.getAnoModelo());
@@ -107,26 +101,7 @@ public class Veiculo {
     public void setCaminhoImagem(String caminhoImagem) { this.caminhoImagem = caminhoImagem; }
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Veiculo veiculo = (Veiculo) o;
-        return Double.compare(preco, veiculo.preco) == 0 &&
-                Objects.equals(chassi, veiculo.chassi) &&
-                Objects.equals(quilometragem, veiculo.quilometragem) &&
-                Objects.equals(nome, veiculo.nome) &&
-                Objects.equals(anoModelo, veiculo.anoModelo) &&
-                Objects.equals(cor, veiculo.cor) &&
-                Objects.equals(motor, veiculo.motor) &&
-                Objects.equals(combustivel, veiculo.combustivel) &&
-                Objects.equals(cambio, veiculo.cambio) &&
-                Objects.equals(caminhoImagem, veiculo.caminhoImagem);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(nome, preco, chassi, anoModelo, quilometragem, cor, motor, combustivel, cambio, caminhoImagem);
-    }
 
     @Override
     public boolean equals(Object o) {
